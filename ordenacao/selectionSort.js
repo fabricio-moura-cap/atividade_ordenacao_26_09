@@ -1,5 +1,6 @@
-// selectionSort.js - Algoritmo de ordenacao por selecao (Selection Sort)
-// Procura o menor numero da parte que ainda nao foi ordenada e coloca no lugar.
+// Implementa o algoritmo de ordenação por seleção (Selection Sort).
+// O vetor recebido é ordenado em ordem crescente e devolvido junto com
+// a quantidade de comparações e de trocas realizadas durante o processo.
 
 function selectionSort(vetor) {
   var comparacoes = 0;
@@ -10,6 +11,8 @@ function selectionSort(vetor) {
   var indiceMenor;
   var auxiliar;
 
+  // A cada iteração, o menor valor da parte não ordenada é localizado
+  // e colocado na posição que ele ocupa definitivamente no vetor.
   for (i = 0; i < tamanho - 1; i++) {
     indiceMenor = i;
     for (j = i + 1; j < tamanho; j++) {
@@ -18,6 +21,7 @@ function selectionSort(vetor) {
         indiceMenor = j;
       }
     }
+    // A troca só é realizada se o menor valor não estiver na posição atual.
     if (indiceMenor != i) {
       auxiliar = vetor[i];
       vetor[i] = vetor[indiceMenor];
